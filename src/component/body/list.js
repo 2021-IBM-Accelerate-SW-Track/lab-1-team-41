@@ -7,6 +7,7 @@ function List() {
 
     const [todolist, setTodolist] = useState([]);
     const [inputTitle, setValue] = useState('');
+    const [deleteInput, setDelete] = useState('');
 
     let listItems = todolist.map( (todoitem) =>
         <ListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
@@ -24,6 +25,13 @@ function List() {
         setTodolist(templist);
         setValue("");
     }
+    function deleteItem() {
+        let templist = [...todolist];
+        templist = templist.filter(item => item.title !== deleteInput);
+        //date and time variables can be changed from strings by whoever is doing that issue
+        setTodolist(templist);
+        setDelete("");
+    }
 
     return (
         <div>
@@ -33,6 +41,12 @@ function List() {
 			    onChange={(e) => setValue(e.target.value)}/>
             <Button variant="contained" color="primary" onClick={addItem} data-testid="new-item-button">
                 Add Item
+            </Button>
+            <TextField id="filled-basic2" label="Delete Item" variant="filled"
+                value={deleteInput} 
+			    onChange={(e) => setDelete(e.target.value)}/>
+            <Button variant="contained" color="primary" onClick={deleteItem}>
+                Delete Item
             </Button>
         </div>
     );
