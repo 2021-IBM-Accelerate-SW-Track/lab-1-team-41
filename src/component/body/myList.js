@@ -1,16 +1,16 @@
 import React, { useState }from 'react';
-import ListItem from "./listItem"
+import MyListItem from "./myListItem"
 import { Button } from '@material-ui/core';
 import { TextField } from '@material-ui/core';
+import List from '@material-ui/core/List';
 
-function List() {
-
+function MyList() {
     const [todolist, setTodolist] = useState([]);
     const [inputTitle, setValue] = useState('');
     const [deleteInput, setDelete] = useState('');
 
     let listItems = todolist.map( (todoitem) =>
-        <ListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
+        <MyListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
     )
 
     function addItem() {
@@ -28,14 +28,17 @@ function List() {
     function deleteItem() {
         let templist = [...todolist];
         templist = templist.filter(item => item.title !== deleteInput);
-        //date and time variables can be changed from strings by whoever is doing that issue
         setTodolist(templist);
         setDelete("");
     }
 
     return (
         <div>
-            {listItems}
+            <div>
+                <List component="nav">
+                    {listItems}
+                </List>
+            </div>
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
 			    onChange={(e) => setValue(e.target.value)}/>
@@ -52,4 +55,4 @@ function List() {
     );
 }
 
-export default List;
+export default MyList;

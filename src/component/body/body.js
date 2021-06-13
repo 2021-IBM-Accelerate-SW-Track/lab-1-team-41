@@ -1,11 +1,11 @@
 import React from 'react';
-import List from "./list"
+import MyList from "./myList"
 
 function Body() {
 
     return (
         <div>
-            <List/>
+            <MyList/>
         </div>
     );
 }
