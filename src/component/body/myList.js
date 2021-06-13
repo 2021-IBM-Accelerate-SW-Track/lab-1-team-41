@@ -8,6 +8,7 @@ function MyList() {
     const [todolist, setTodolist] = useState([]);
     const [inputTitle, setValue] = useState('');
     const [deleteInput, setDelete] = useState('');
+    //the delete button and everything can be removed by whoever is doing that issue
 
     let listItems = todolist.map( (todoitem) =>
         <MyListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
@@ -34,11 +35,9 @@ function MyList() {
 
     return (
         <div>
-            <div>
-                <List component="nav">
-                    {listItems}
-                </List>
-            </div>
+            <List component="nav">
+                {listItems}
+            </List>
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
 			    onChange={(e) => setValue(e.target.value)}/>
