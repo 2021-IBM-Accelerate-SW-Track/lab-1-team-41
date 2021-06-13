@@ -1,11 +1,11 @@
 import React from 'react';
-import MyList from "./myList"
+import TodoList from "../todoList/todoList"
 
 function Body() {
 
     return (
         <div>
-            <MyList/>
+            <TodoList/>
         </div>
     );
 }

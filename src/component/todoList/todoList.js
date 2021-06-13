@@ -1,17 +1,17 @@
 import React, { useState }from 'react';
-import MyListItem from "./myListItem"
+import TodoListItem from "../todoListItem/todoListItem"
 import { Button } from '@material-ui/core';
 import { TextField } from '@material-ui/core';
 import List from '@material-ui/core/List';
 
-function MyList() {
+function TodoList() {
     const [todolist, setTodolist] = useState([]);
     const [inputTitle, setValue] = useState('');
     const [deleteInput, setDelete] = useState('');
     //the delete button and everything can be removed by whoever is doing that issue
 
     let listItems = todolist.map( (todoitem) =>
-        <MyListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
+        <TodoListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
     )
 
     function addItem() {
@@ -54,4 +54,4 @@ function MyList() {
     );
 }
 
-export default MyList;
+export default TodoList;

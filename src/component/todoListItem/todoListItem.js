@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-function MyListItem(props) {
+function TodoListItem(props) {
     return (
         <div>
             <ListItem>
@@ -12,4 +12,4 @@ function MyListItem(props) {
     );
 }
 
-export default MyListItem;
+export default TodoListItem;
