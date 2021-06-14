@@ -5,7 +5,7 @@ import { TextField } from '@material-ui/core';
 import List from '@material-ui/core/List';
 
 function TodoList() {
-    const [todoList, setTodolist] = useState([]);
+    const [todoList, setTodoList] = useState([]);
     const [inputTitle, setTitle] = useState('');
     const [deleteInput, setDelete] = useState('');
     //the delete button and everything can be removed by whoever is doing that issue
@@ -35,14 +35,14 @@ function TodoList() {
         if (!newItem.title || isDuplicate(newItem)) return; 
 
         //date and time variables can be changed from strings by whoever is doing that issue
-        setTodolist([...todoList, newItem]);
+        setTodoList([...todoList, newItem]);
         setTitle(""); //clear item name after it is added
     }
 
     function deleteItem() {
         let templist = [...todoList];
         templist = templist.filter(item => item.title !== deleteInput);
-        setTodolist(templist);
+        setTodoList(templist);
         setDelete("");
     }
 
