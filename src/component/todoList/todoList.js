@@ -10,7 +10,7 @@ function TodoList() {
     const [deleteInput, setDelete] = useState(''); // the delete button and everything can be removed by whoever is doing that issue
     const [editMode, setEditMode] = useState(false);
 
-    let listItems = todolist.map( (todoitem, index) =>
+    let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
             keyVal={index} 
             title={todoitem.title} 
