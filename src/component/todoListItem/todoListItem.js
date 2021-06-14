@@ -4,11 +4,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 function TodoListItem(props) {
     return (
-        <div>
-            <ListItem>
-                <ListItemText primary={props.title} />
-            </ListItem>
-        </div>
+        <ListItem key={props.keyVal}>
+            <ListItemText primary={props.title}/>
+        </ListItem>
     );
 }
 

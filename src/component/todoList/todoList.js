@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import TodoListItem from "../todoListItem/todoListItem"
-import { Button } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import { TextField } from '@material-ui/core';
 import List from '@material-ui/core/List';
 
@@ -10,8 +10,8 @@ function TodoList() {
     const [deleteInput, setDelete] = useState('');
     //the delete button and everything can be removed by whoever is doing that issue
 
-    let listItems = todolist.map( (todoitem) =>
-        <TodoListItem title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
+    let listItems = todolist.map( (todoitem, index) =>
+        <TodoListItem keyVal={index} title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
     )
 
     function addItem() {
@@ -34,23 +34,24 @@ function TodoList() {
     }
 
     return (
-        <div>
+        <Container>
             <List component="nav">
                 {listItems}
             </List>
+        
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
-			    onChange={(e) => setValue(e.target.value)}/>
+                onChange={(e) => setValue(e.target.value)}/>
             <Button variant="contained" color="primary" onClick={addItem} data-testid="new-item-button">
                 Add Item
             </Button>
             <TextField id="filled-basic2" label="Delete Item" variant="filled"
                 value={deleteInput} 
-			    onChange={(e) => setDelete(e.target.value)}/>
+                onChange={(e) => setDelete(e.target.value)}/>
             <Button variant="contained" color="primary" onClick={deleteItem}>
                 Delete Item
             </Button>
-        </div>
+        </Container>
     );
 }
 
