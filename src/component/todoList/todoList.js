@@ -8,6 +8,7 @@ function TodoList() {
     const [todolist, setTodolist] = useState([]);
     const [inputTitle, setValue] = useState('');
     const [deleteInput, setDelete] = useState('');
+    const [editMode, setEditMode] = useState(false);
     //the delete button and everything can be removed by whoever is doing that issue
 
     let listItems = todolist.map( (todoitem, index) =>
@@ -18,8 +19,13 @@ function TodoList() {
             timeAdded={todoitem.timeAdded} 
             dateDue={todoitem.dateDue}
             completed={todoitem.completed}
+            editModeEnabled={editMode}
         />
     )
+
+    function updateEditMode(newValue) {
+        setEditMode(newValue);
+    }
 
     function addItem() {
         let templist = [...todolist];
