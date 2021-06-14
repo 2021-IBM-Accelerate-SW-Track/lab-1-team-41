@@ -11,7 +11,14 @@ function TodoList() {
     //the delete button and everything can be removed by whoever is doing that issue
 
     let listItems = todolist.map( (todoitem, index) =>
-        <TodoListItem keyVal={index} title={todoitem.title} dateAdded={todoitem.dateAdded} timeAdded={todoitem.timeAdded} dateDue={todoitem.dateDue}/>
+        <TodoListItem 
+            keyVal={index} 
+            title={todoitem.title} 
+            dateAdded={todoitem.dateAdded} 
+            timeAdded={todoitem.timeAdded} 
+            dateDue={todoitem.dateDue}
+            completed={todoitem.completed}
+        />
     )
 
     function addItem() {
@@ -21,6 +28,7 @@ function TodoList() {
             dateAdded: "",
             timeAdded: "",
             dateDue: "",
+            completed: false
         })
         //date and time variables can be changed from strings by whoever is doing that issue
         setTodolist(templist);
