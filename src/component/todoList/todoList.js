@@ -5,11 +5,10 @@ import { TextField } from '@material-ui/core';
 import List from '@material-ui/core/List';
 
 function TodoList() {
-    const [todolist, setTodolist] = useState([]);
-    const [inputTitle, setValue] = useState('');
-    const [deleteInput, setDelete] = useState('');
+    const [todoList, setTodoList] = useState([]);
+    const [inputTitle, setTitle] = useState('');
+    const [deleteInput, setDelete] = useState(''); // the delete button and everything can be removed by whoever is doing that issue
     const [editMode, setEditMode] = useState(false);
-    //the delete button and everything can be removed by whoever is doing that issue
 
     let listItems = todolist.map( (todoitem, index) =>
         <TodoListItem 
@@ -21,29 +20,42 @@ function TodoList() {
             completed={todoitem.completed}
             editModeEnabled={editMode}
         />
-    )
+    );
 
     function updateEditMode(newValue) {
         setEditMode(newValue);
     }
 
+    function isDuplicate(newItem) {
+        for (let i = 0; i < todoList.length; ++i) {
+            if (newItem.title === todoList[i].title) { // will add more checks when date and time is defined
+                return true;
+            }
+        }
+        return false;
+    }
+
     function addItem() {
-        let templist = [...todolist];
-        templist.push({
+        const newItem = {
             title: inputTitle,
             dateAdded: "",
             timeAdded: "",
             dateDue: "",
             completed: false
-        })
+        }
+        
+        //could add error message later on, also add check for date and time when those are added
+        if (!newItem.title || isDuplicate(newItem)) return; 
+
         //date and time variables can be changed from strings by whoever is doing that issue
-        setTodolist(templist);
-        setValue("");
+        setTodoList([...todoList, newItem]);
+        setTitle(""); //clear item name after it is added
     }
+
     function deleteItem() {
-        let templist = [...todolist];
+        let templist = [...todoList];
         templist = templist.filter(item => item.title !== deleteInput);
-        setTodolist(templist);
+        setTodoList(templist);
         setDelete("");
     }
 
@@ -55,7 +67,7 @@ function TodoList() {
         
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
-                onChange={(e) => setValue(e.target.value)}/>
+                onChange={(e) => setTitle(e.target.value)}/>
             <Button variant="contained" color="primary" onClick={addItem} data-testid="new-item-button">
                 Add Item
             </Button>
