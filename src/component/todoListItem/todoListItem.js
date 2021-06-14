@@ -1,7 +1,8 @@
 import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Checkbox, ListItemIcon } from '@material-ui/core';
+import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoListItem(props) {
     return (
@@ -13,6 +14,14 @@ function TodoListItem(props) {
                 />
             </ListItemIcon>
             <ListItemText primary={props.title}/>
+            {props.editModeEnabled !== true ? true : false &&
+                <ListItemSecondaryAction>
+                    <IconButton color="secondary">
+                        <DeleteIcon/>
+                    </IconButton>
+                </ListItemSecondaryAction>
+            }
+            
         </ListItem>
     );
 }
