@@ -49,7 +49,7 @@ function TodoList() {
 
     return (
         <Container>
-            <List component="nav">
+            <List component="ul" style={{marginTop: '2rem', marginBottom: '2rem'}}>
                 {listItems}
             </List>
         
