@@ -61,8 +61,8 @@ function TodoList() {
 
     return (
         <Container>
-            <div className="list-item-container">
-                <List component="ul" style={{marginTop: '2rem', marginBottom: '2rem'}}>
+            <div className="list-container">
+                <List component="ul">
                     {listItems}
                 </List>
             </div>

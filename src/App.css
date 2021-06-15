@@ -16,20 +16,23 @@ code {
     monospace;
 }
 
-.list-item {
-  margin-bottom: 15px;
-  background-color: rgb(184, 184, 184);
-  border-radius: 3px;
+.list-item { 
+  margin-bottom: 15px !important;
+  background-color: rgb(184, 184, 184) !important;
+  border-radius: 3px !important;
+  max-width: 60% !important;
+  margin: auto;
 }
 
-.list-item-container {
+.list-container {
   overflow: hidden;
   max-height: 400px;
   min-height: 100px;
   overflow-y: scroll;
   margin-bottom: 50px;
+  margin-top: 2rem;
 }
 
-.list-item-container::-webkit-scrollbar {
+.list-container::-webkit-scrollbar {
   display: none;
 }

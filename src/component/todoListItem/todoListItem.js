@@ -6,8 +6,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoListItem(props) {
     return (
-        <Paper key={props.keyVal} component="li" style={{ maxWidth: '60%', margin: 'auto' }}>
-            <ListItem component="div" className="list-item">
+        <Paper key={props.keyVal} className="list-item" component="li">
+            <ListItem component="div">
                 <ListItemIcon>
                     <Checkbox 
                         color="primary"
