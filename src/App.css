@@ -29,7 +29,7 @@ code {
   max-height: 400px;
   min-height: 100px;
   overflow-y: scroll;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
   margin-top: 2rem;
 }
 
