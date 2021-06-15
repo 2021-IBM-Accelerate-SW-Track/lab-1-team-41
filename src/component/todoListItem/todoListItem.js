@@ -5,6 +5,12 @@ import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} fro
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoListItem(props) {
+
+    function setEdit() {
+        let text = document.getElementById("itemText").textContent;
+        props.update(props.keyVal, text);
+    }
+
     return (
         <Paper key={props.keyVal} component="li" style={{maxWidth: '50%', margin: 'auto'}}>
             <ListItem component="div">
@@ -14,7 +20,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText primary={props.title}/>
+                <ListItemText id="itemText" primary={props.title} contentEditable="true" onBlur={setEdit}/>
                 {props.editModeEnabled !== true ? true : false &&
                     <ListItemSecondaryAction>
                         <IconButton color="secondary">
