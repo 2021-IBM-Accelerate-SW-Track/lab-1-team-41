@@ -61,9 +61,11 @@ function TodoList() {
 
     return (
         <Container>
-            <List component="ul" style={{marginTop: '2rem', marginBottom: '2rem'}}>
-                {listItems}
-            </List>
+            <div className="list-item-container">
+                <List component="ul" style={{marginTop: '2rem', marginBottom: '2rem'}}>
+                    {listItems}
+                </List>
+            </div>
         
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
