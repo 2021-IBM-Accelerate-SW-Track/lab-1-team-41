@@ -15,3 +15,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.list-item { 
+  margin-bottom: 15px !important;
+  background-color: rgb(184, 184, 184) !important;
+  border-radius: 3px !important;
+  max-width: 60% !important;
+  margin: auto;
+}
+
+.list-container {
+  overflow: hidden;
+  max-height: 400px;
+  min-height: 100px;
+  overflow-y: scroll;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.list-container::-webkit-scrollbar {
+  display: none;
+}
