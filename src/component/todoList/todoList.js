@@ -32,9 +32,11 @@ function TodoList() {
         let templist = [...todoList];
         let changeItem = templist.filter(item => item.keyVal === keyval);
         templist = templist.filter(item => item.keyVal !== keyval);
+        console.log(changeItem);
         changeItem[0].title = newText;
         templist = [...templist, changeItem[0]];
         setTodoList(templist);
+        //warning: new lines are not differentiated with this text
     }
 
     function isDuplicate(newItem) {

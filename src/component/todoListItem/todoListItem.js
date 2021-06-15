@@ -8,7 +8,15 @@ function TodoListItem(props) {
 
     function setEdit() {
         let text = document.getElementById("itemText").textContent;
+        console.log(text);
         props.update(props.keyVal, text);
+    }
+
+    function handleKeyDown(e) {
+        if (e.key === 'Enter') {
+            document.getElementById("itemText").blur();
+            setEdit();
+        }
     }
 
     return (
@@ -20,7 +28,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id="itemText" primary={props.title} contentEditable="true" onBlur={setEdit}/>
+                <ListItemText id="itemText" primary={props.title} contentEditable="true" onBlur={setEdit} onKeyDown={handleKeyDown}/>
                 {props.editModeEnabled !== true ? true : false &&
                     <ListItemSecondaryAction>
                         <IconButton color="secondary">
