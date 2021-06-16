@@ -6,8 +6,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoListItem(props) {
 
-    const [currentText, setCurrentText] = useState(props.title);
-
     function setEdit() {
         let tempid = "itemText"+props.keyVal;
         let text = document.getElementById(tempid).textContent;
@@ -35,13 +33,11 @@ function TodoListItem(props) {
                     />
                 </ListItemIcon>
                 <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
-                {props.editModeEnabled !== true ? true : false &&
-                    <ListItemSecondaryAction>
-                        <IconButton color="secondary">
-                            <DeleteIcon/>
-                        </IconButton>
-                    </ListItemSecondaryAction>
-                }
+                <ListItemSecondaryAction>
+                    <IconButton color="secondary">
+                        <DeleteIcon/>
+                    </IconButton>
+                </ListItemSecondaryAction>
             </ListItem>
         </Paper>
     );
