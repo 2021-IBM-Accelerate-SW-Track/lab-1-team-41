@@ -36,10 +36,11 @@ function TodoList() {
     }
 
     function addItem() {
+        var getDateAdded = new Date();
         const newItem = {
             title: inputTitle,
-            dateAdded: "",
-            timeAdded: "",
+            dateAdded: (getDateAdded.getMonth() + 1) + "/" + getDateAdded.getDate() + "/" + getDateAdded.getFullYear(),
+            timeAdded: getDateAdded.getHours() + ":" + getDateAdded.getMinutes() + " EST", ////added the Time as a String, may chnage later into a more concise format
             dateDue: "",
             completed: false
         }
@@ -50,6 +51,7 @@ function TodoList() {
         //date and time variables can be changed from strings by whoever is doing that issue
         setTodoList([...todoList, newItem]);
         setTitle(""); //clear item name after it is added
+        
     }
 
     function deleteItem() {
