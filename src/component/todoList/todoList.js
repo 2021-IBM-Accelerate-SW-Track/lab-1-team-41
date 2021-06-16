@@ -22,10 +22,6 @@ function TodoList() {
     );
     
     function updateText(oldText, newText) {
-        console.log("--------");
-        console.log("We're starting a new update: ")
-        //console.log("key value: " + keyval);
-        console.log("new text value" + newText);
         let templist = [...todoList];
         for(let i = 0; i<templist.length; i++) {
             if(templist[i].title === oldText) {
@@ -33,8 +29,6 @@ function TodoList() {
             }
         }
         setTodoList(templist);
-        console.log(todoList);
-        console.log("--------");
     }
 
     function isDuplicate(newItem) {
