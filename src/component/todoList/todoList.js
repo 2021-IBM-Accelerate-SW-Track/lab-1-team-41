@@ -8,7 +8,6 @@ function TodoList() {
     const [todoList, setTodoList] = useState([]);
     const [inputTitle, setTitle] = useState('');
     const [deleteInput, setDelete] = useState(''); // the delete button and everything can be removed by whoever is doing that issue
-    const [count, setCount] = useState(0);
 
     let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
@@ -48,17 +47,13 @@ function TodoList() {
     }
 
     function addItem() {
-        setCount(count+1);
-        let tempcount = count;
         const newItem = {
             title: inputTitle,
-            keyVal: tempcount,
             dateAdded: "",
             timeAdded: "",
             dateDue: "",
             completed: false,
         }
-        console.log("new item created, key val: " + tempcount)
         
         //could add error message later on, also add check for date and time when those are added
         if (!newItem.title || isDuplicate(newItem)) return; 
