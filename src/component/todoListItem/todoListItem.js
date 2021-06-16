@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} from '@material-ui/core';
@@ -6,15 +6,21 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 function TodoListItem(props) {
 
+    const [currentText, setCurrentText] = useState(props.title);
+
     function setEdit() {
-        let text = document.getElementById("itemText").textContent;
+        let tempid = "itemText"+props.keyVal;
+        let text = document.getElementById(tempid).textContent;
         console.log(text);
-        props.update(props.keyVal, text);
+        if(text!==props.title) {
+            props.update(props.title, text);
+        }
     }
 
     function handleKeyDown(e) {
-        if (e.key === 'Enter') {
-            document.getElementById("itemText").blur();
+        let tempid = "itemText"+props.keyVal;
+        if (e.key === 'Enter' && document.getElementById(tempid)===document.activeElement) {
+            document.getElementById(tempid).blur();
             setEdit();
         }
     }
@@ -28,7 +34,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id="itemText" primary={props.title} contentEditable="true" onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
                 {props.editModeEnabled !== true ? true : false &&
                     <ListItemSecondaryAction>
                         <IconButton color="secondary">

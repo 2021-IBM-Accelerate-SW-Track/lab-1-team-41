@@ -28,15 +28,20 @@ function TodoList() {
         setEditMode(newValue);
     }
     
-    function updateText(keyval, newText) {
+    function updateText(oldText, newText) {
+        console.log("--------");
+        console.log("We're starting a new update: ")
+        //console.log("key value: " + keyval);
+        console.log("new text value" + newText);
         let templist = [...todoList];
-        let changeItem = templist.filter(item => item.keyVal === keyval);
-        templist = templist.filter(item => item.keyVal !== keyval);
-        console.log(changeItem);
-        changeItem[0].title = newText;
-        templist = [...templist, changeItem[0]];
+        for(let i = 0; i<templist.length; i++) {
+            if(templist[i].title === oldText) {
+                templist[i].title = newText;
+            }
+        }
         setTodoList(templist);
-        //warning: new lines are not differentiated with this text
+        console.log(todoList);
+        console.log("--------");
     }
 
     function isDuplicate(newItem) {
@@ -50,14 +55,16 @@ function TodoList() {
 
     function addItem() {
         setCount(count+1);
+        let tempcount = count;
         const newItem = {
             title: inputTitle,
+            keyVal: tempcount,
             dateAdded: "",
             timeAdded: "",
             dateDue: "",
             completed: false,
-            keyVal: count,
         }
+        console.log("new item created, key val: " + tempcount)
         
         //could add error message later on, also add check for date and time when those are added
         if (!newItem.title || isDuplicate(newItem)) return; 
