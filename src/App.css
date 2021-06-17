@@ -16,14 +16,7 @@ code {
     monospace;
 }
 
-.list-item { 
-  margin-bottom: 15px !important;
-  background-color: rgb(184, 184, 184) !important;
-  border-radius: 3px !important;
-  max-width: 60% !important;
-  margin: auto;
-}
-
+/* Todo List Container */
 .list-container {
   overflow: hidden;
   max-height: 400px;
@@ -36,3 +29,14 @@ code {
 .list-container::-webkit-scrollbar {
   display: none;
 }
+/* Todo List Container */
+
+/* List Item */
+.list-item { 
+  margin-bottom: 15px !important;
+  background-color: rgb(184, 184, 184) !important;
+  border-radius: 3px !important;
+  max-width: 60% !important;
+  margin: auto;
+}
+/* List Item */
