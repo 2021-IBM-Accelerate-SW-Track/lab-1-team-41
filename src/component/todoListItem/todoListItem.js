@@ -4,6 +4,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+
+
 function TodoListItem(props) {
 
     function setEdit() {
@@ -33,6 +35,7 @@ function TodoListItem(props) {
                     />
                 </ListItemIcon>
                 <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText primary={"Added on: " + props.dateAdded + ", " + props.timeAdded}/>
                 <ListItemSecondaryAction>
                     <IconButton color="secondary">
                         <DeleteIcon/>
