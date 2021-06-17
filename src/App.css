@@ -36,3 +36,9 @@ code {
 .list-container::-webkit-scrollbar {
   display: none;
 }
+
+.todo-item-date-added {
+  justify-self: flex-end;
+  text-align: right;
+  padding-right: 1.75rem;
+}

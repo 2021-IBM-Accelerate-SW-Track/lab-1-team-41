@@ -35,7 +35,7 @@ function TodoListItem(props) {
                     />
                 </ListItemIcon>
                 <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
-                <ListItemText primary={"Added on: " + props.dateAdded + ", " + props.timeAdded}/>
+                <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + ", " + props.timeAdded}/>
                 <ListItemSecondaryAction>
                     <IconButton color="secondary">
                         <DeleteIcon/>
