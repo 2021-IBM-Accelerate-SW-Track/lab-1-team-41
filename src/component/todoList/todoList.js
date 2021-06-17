@@ -49,11 +49,11 @@ function TodoList() {
         }
         
         //could add error message later on, also add check for date and time when those are added
-        if (!newItem.title || isDuplicate(newItem)) return; 
+        if (!newItem.title || isDuplicate(newItem)) return false; 
 
         //date and time variables can be changed from strings by whoever is doing that issue
         setTodoList([...todoList, newItem]);
-        //setTitle(""); //clear item name after it is added
+        return true;
     }
 
     function deleteItem(deleteInput) {
