@@ -30,7 +30,7 @@ export default function TodoListInputGroup (props){
                 color="primary" 
                 onClick={addItemClicked} 
                 data-testid="new-item-button">
-                Add Item
+                Add Todo
             </Button>
         </div>
     )
