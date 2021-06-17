@@ -27,3 +27,4 @@ yarn-error.log*
 
 # custom additions
 /Screenshots
+yarn.lock

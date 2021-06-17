@@ -26,7 +26,7 @@ function TodoListItem(props) {
     }
 
     return (
-        <Paper key={props.keyVal} className="list-item" component="li">
+        <Paper key={props.keyVal} className="list-item" component="div">
             <ListItem component="div">
                 <ListItemIcon>
                     <Checkbox 
@@ -34,7 +34,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText id={"itemText"+props.keyVal} primary={props.title} onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
                 <ListItemText primary={"Added on: " + props.dateAdded + ", " + props.timeAdded}/>
                 <ListItemSecondaryAction>
                     <IconButton color="secondary">
