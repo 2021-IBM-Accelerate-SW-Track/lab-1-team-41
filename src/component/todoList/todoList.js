@@ -41,11 +41,11 @@ function TodoList() {
     }
 
     function addItem() {
-        var getDateAdded = new Date();
+        var dateObj = new Date();
         const newItem = {
             title: inputTitle,
-            dateAdded: (getDateAdded.getMonth() + 1) + "/" + getDateAdded.getDate() + "/" + getDateAdded.getFullYear(),
-            timeAdded: getDateAdded.getHours() + ":" + getDateAdded.getMinutes() + " EST", ////added the Time as a String, may chnage later into a more concise format
+            dateAdded: (dateObj.getMonth() + 1) + "/" + dateObj.getDate() + "/" + dateObj.getFullYear(),
+            timeAdded: dateObj.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', timeZoneName: 'short'}),
             dateDue: "",
             completed: false,
         }
