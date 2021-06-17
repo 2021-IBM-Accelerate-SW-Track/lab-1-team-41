@@ -15,11 +15,21 @@ export default function TodoListInputGroup (props){
     }
 
     return (
-        <div className="todo-input-group-container">
-            <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
+        <div id="todo-input-group-container">
+            <TextField 
+                className="todo-input-group-textfield-container" 
+                label="Todo Title" 
+                variant="filled" 
+                data-testid="new-item-input"
                 value={inputTitle} 
-                onChange={(e) => setTitle(e.target.value)}/>
-            <Button variant="contained" color="primary" onClick={addItemClicked} data-testid="new-item-button">
+                onChange={(e) => setTitle(e.target.value)}
+                InputProps={{id: "todo-input-group-title-field"}}/>
+            <Button 
+                id="todo-input-group-add-button" 
+                variant="contained" 
+                color="primary" 
+                onClick={addItemClicked} 
+                data-testid="new-item-button">
                 Add Item
             </Button>
         </div>
