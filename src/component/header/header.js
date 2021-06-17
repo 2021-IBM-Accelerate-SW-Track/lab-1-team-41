@@ -9,13 +9,6 @@ export default function Header(){
                     <Typography variant="h6" style={{justifySelf: 'flex-start'}}>
                         2021 IBM Accelerate Software Track: Group 41 To-Do List Application
                     </Typography>
-                    <Button 
-                        color='inherit'
-                        startIcon={<EditIcon/>}
-                        style={{justifySelf:'flex-end'}}
-                    >
-                        Edit
-                    </Button>
                 </Toolbar>
             </AppBar>
         </div>
