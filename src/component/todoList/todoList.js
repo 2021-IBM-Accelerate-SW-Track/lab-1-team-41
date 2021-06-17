@@ -8,7 +8,6 @@ function TodoList() {
     const [todoList, setTodoList] = useState([]);
     const [inputTitle, setTitle] = useState('');
     const [deleteInput, setDelete] = useState(''); // the delete button and everything can be removed by whoever is doing that issue
-    const [editMode, setEditMode] = useState(false);
 
     let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
@@ -18,12 +17,18 @@ function TodoList() {
             timeAdded={todoitem.timeAdded} 
             dateDue={todoitem.dateDue}
             completed={todoitem.completed}
-            editModeEnabled={editMode}
+            update={updateText}
         />
     );
-
-    function updateEditMode(newValue) {
-        setEditMode(newValue);
+    
+    function updateText(oldText, newText) {
+        let templist = [...todoList];
+        for(let i = 0; i<templist.length; i++) {
+            if(templist[i].title === oldText) {
+                templist[i].title = newText;
+            }
+        }
+        setTodoList(templist);
     }
 
     function isDuplicate(newItem) {
@@ -42,7 +47,7 @@ function TodoList() {
             dateAdded: (getDateAdded.getMonth() + 1) + "/" + getDateAdded.getDate() + "/" + getDateAdded.getFullYear(),
             timeAdded: getDateAdded.getHours() + ":" + getDateAdded.getMinutes() + " EST", ////added the Time as a String, may chnage later into a more concise format
             dateDue: "",
-            completed: false
+            completed: false,
         }
         
         //could add error message later on, also add check for date and time when those are added
