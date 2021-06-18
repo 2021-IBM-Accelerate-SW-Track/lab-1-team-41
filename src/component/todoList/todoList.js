@@ -9,7 +9,8 @@ function TodoList() {
 
     let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
-            keyVal={index} 
+            key={index}
+            indexVal={index} 
             title={todoitem.title} 
             dateAdded={todoitem.dateAdded} 
             timeAdded={todoitem.timeAdded} 
@@ -39,11 +40,11 @@ function TodoList() {
     }
 
     function addItem(inputTitle) {
-        var getDateAdded = new Date();
+        var dateObj = new Date();
         const newItem = {
             title: inputTitle,
-            dateAdded: (getDateAdded.getMonth() + 1) + "/" + getDateAdded.getDate() + "/" + getDateAdded.getFullYear(),
-            timeAdded: getDateAdded.getHours() + ":" + getDateAdded.getMinutes() + " EST", ////added the Time as a String, may chnage later into a more concise format
+            dateAdded: (dateObj.getMonth() + 1) + "/" + dateObj.getDate() + "/" + dateObj.getFullYear(),
+            timeAdded: dateObj.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', timeZoneName: 'short'}),
             dateDue: "",
             completed: false,
         }
@@ -69,7 +70,7 @@ function TodoList() {
                     {listItems}
                 </List>
             </div>
-        
+
             <TodoListInputGroup
                 addHandler={addItem}
             />

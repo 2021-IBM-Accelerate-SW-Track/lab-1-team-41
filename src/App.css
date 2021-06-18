@@ -39,6 +39,12 @@ code {
   max-width: 60% !important;
   margin: auto;
 }
+
+.todo-item-date-added {
+  justify-self: flex-end;
+  text-align: right;
+  padding-right: 1.75rem;
+}
 /* List Item */
 
 /* Todo Input Group */
