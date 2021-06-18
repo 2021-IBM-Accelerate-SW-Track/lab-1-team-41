@@ -11,7 +11,8 @@ function TodoList() {
 
     let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
-            keyVal={index} 
+            key={index}
+            indexVal={index} 
             title={todoitem.title} 
             dateAdded={todoitem.dateAdded} 
             timeAdded={todoitem.timeAdded} 
@@ -73,7 +74,7 @@ function TodoList() {
                     {listItems}
                 </List>
             </div>
-        
+            
             <TextField id="filled-basic" label="Add Item" variant="filled" data-testid="new-item-input"
                 value={inputTitle} 
                 onChange={(e) => setTitle(e.target.value)}/>
