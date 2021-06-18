@@ -78,7 +78,7 @@ function TodoList() {
             {listItems.length < 1 &&
                 <EmptyStatePlaceholder
                     elementId = "todo-empty-state-placeholder"
-                    message = "It looks like your todo list is empty, please add one below."
+                    message = "It looks like your todo list is empty, please add a task below."
                 />
             }
 
