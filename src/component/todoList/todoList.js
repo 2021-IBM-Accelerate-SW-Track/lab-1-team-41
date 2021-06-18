@@ -17,6 +17,7 @@ function TodoList() {
             dateDue={todoitem.dateDue}
             completed={todoitem.completed}
             update={updateText}
+            delete={deleteItem}
         />
     );
     
