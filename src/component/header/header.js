@@ -7,7 +7,7 @@ export default function Header(){
             <AppBar position='relative' style={{ marginBottom: '1rem'}}>
                 <Toolbar style={{justifyContent: 'space-between'}}>
                     <Typography variant="h6" style={{justifySelf: 'flex-start'}}>
-                        2021 IBM Accelerate Software Track: Group 41 To-Do List Application
+                        2021 IBM Accelerate Software Track: Group 41 To-Do List Application Test
                     </Typography>
                 </Toolbar>
             </AppBar>
