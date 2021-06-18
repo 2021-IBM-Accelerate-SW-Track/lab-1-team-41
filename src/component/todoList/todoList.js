@@ -12,7 +12,7 @@ function TodoList() {
     let listItems = todoList.map( (todoitem, index) =>
         <TodoListItem 
             key={index}
-            keyVal={index} 
+            indexVal={index} 
             title={todoitem.title} 
             dateAdded={todoitem.dateAdded} 
             timeAdded={todoitem.timeAdded} 
