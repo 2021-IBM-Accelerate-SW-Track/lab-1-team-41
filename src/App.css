@@ -16,14 +16,7 @@ code {
     monospace;
 }
 
-.list-item { 
-  margin-bottom: 15px !important;
-  background-color: rgb(184, 184, 184) !important;
-  border-radius: 3px !important;
-  max-width: 60% !important;
-  margin: auto;
-}
-
+/* Todo List Container */
 .list-container {
   overflow: hidden;
   max-height: 400px;
@@ -36,9 +29,47 @@ code {
 .list-container::-webkit-scrollbar {
   display: none;
 }
+/* Todo List Container */
+
+/* List Item */
+.list-item { 
+  margin-bottom: 15px !important;
+  background-color: rgb(184, 184, 184) !important;
+  border-radius: 3px !important;
+  max-width: 60% !important;
+  margin: auto;
+}
 
 .todo-item-date-added {
   justify-self: flex-end;
   text-align: right;
   padding-right: 1.75rem;
 }
+/* List Item */
+
+/* Todo Input Group */
+#todo-input-group-container {
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.todo-input-group-textfield-container {
+  width: 100%;
+}
+
+#todo-input-group-title-field {
+  display: block;
+  width: 100%;
+}
+
+#todo-input-group-add-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+
+  width: 100%;
+  padding: 0.75rem;
+}
+/* Todo Input Group */
