@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 function TodoListItem(props) {
 
     function setEdit() {
-        let tempid = "itemText"+props.keyVal;
+        let tempid = "itemText"+props.indexVal;
         let text = document.getElementById(tempid).textContent;
         console.log(text);
         if(text!==props.title) {
@@ -18,7 +18,7 @@ function TodoListItem(props) {
     }
 
     function handleKeyDown(e) {
-        let tempid = "itemText"+props.keyVal;
+        let tempid = "itemText"+props.indexVal;
         if (e.key === 'Enter' && document.getElementById(tempid)===document.activeElement) {
             document.getElementById(tempid).blur();
             setEdit();
@@ -26,7 +26,7 @@ function TodoListItem(props) {
     }
 
     return (
-        <Paper key={props.keyVal} className="list-item" component="li">
+        <Paper key={props.indexVal} className="list-item" component="div">
             <ListItem component="div">
                 <ListItemIcon>
                     <Checkbox 
@@ -34,7 +34,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id={"itemText"+props.keyVal} primary={props.title} contentEditable="true" onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText id={"itemText"+props.indexVal} contentEditable="true" primary={props.title} onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
                 <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
                 <ListItemSecondaryAction>
                     <IconButton color="secondary">
