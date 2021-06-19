@@ -3,6 +3,7 @@ import { Container } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import TodoListItem from "../todoListItem/todoListItem"
 import TodoListInputGroup from "../todoListInputGroup/todoListInputGroup";
+import EmptyStatePlaceholder from '../emptyStatePlaceholder/emptyStatePlaceholder';
 
 function TodoList() {
     const [todoList, setTodoList] = useState([]);
@@ -66,11 +67,21 @@ function TodoList() {
 
     return (
         <Container>
-            <div className="list-container">
-                <List component="ul">
-                    {listItems}
-                </List>
-            </div>
+
+            {listItems.length > 0 &&
+                <div className="list-container">
+                    <List component="ul">
+                        {listItems}
+                    </List>
+                </div>          
+            }
+            
+            {listItems.length < 1 &&
+                <EmptyStatePlaceholder
+                    elementId = "todo-empty-state-placeholder"
+                    message = "It looks like your todo list is empty, please add a task below."
+                />
+            }
 
             <TodoListInputGroup
                 addHandler={addItem}
