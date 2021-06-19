@@ -101,6 +101,18 @@ code {
   width: 100%;
 }
 
+.todo-input-group-textfield-container .MuiFilledInput-root {
+  background-color: var(--surface-color);
+}
+
+.todo-input-group-textfield-container label.Mui-focused {
+  color: var(--primary-color);
+}
+
+.todo-input-group-textfield-container .MuiFilledInput-underline.Mui-focused:after {
+  border-color: var(--primary-color);
+}
+
 #todo-input-group-title-field {
   display: block;
   width: 100%;
