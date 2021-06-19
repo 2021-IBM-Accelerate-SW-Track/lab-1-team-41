@@ -85,6 +85,10 @@ code {
   margin: auto;
 }
 
+.todo-item-checked-icon {
+  fill: var(--primary-color) !important;
+}
+
 .todo-item-date-added {
   justify-self: flex-end;
   text-align: right;

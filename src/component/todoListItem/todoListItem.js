@@ -3,7 +3,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-
+import { CheckCircleRounded } from '@material-ui/icons';
+import RadioButtonUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 
 
 function TodoListItem(props) {
@@ -31,6 +32,8 @@ function TodoListItem(props) {
                 <ListItemIcon>
                     <Checkbox 
                         color="primary"
+                        checkedIcon={<CheckCircleRounded className="todo-item-checked-icon"/>}
+                        icon={<RadioButtonUnchecked/>}
                         checked={props.completed}
                     />
                 </ListItemIcon>
