@@ -84,6 +84,10 @@ code {
   text-align: right;
   padding-right: 1.75rem;
 }
+
+.todo-item-delete-btn{
+  color: var(--secondary-color) !important;
+}
 /* List Item */
 
 /* Todo Input Group */
