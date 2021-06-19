@@ -20,18 +20,22 @@ code {
 .empty-state-placeholder {
   display: flex;
   justify-content: center;
+  align-items: center;
   
   margin-left: auto;
   margin-right: auto;
   min-height: 5rem;
+  padding: 0.5rem;
 }
 
-.empty-state-placeholder-message {
-  align-self: center;
+.empty-state-placeholder-icon {
+  margin-right: 0.75rem;
 }
+
+.empty-state-placeholder-message {}
 
 #todo-empty-state-placeholder {
-  max-width: 50%;
+  max-width: 42%;
   margin-bottom: 1rem;
 }
 /* Empty State Placeholder */
