@@ -26,8 +26,10 @@ function TodoListItem(props) {
         }
     }
 
+    let listItemClassName = props.completed === true ? 'list-item is-completed' : 'list-item';
+
     return (
-        <Paper key={props.indexVal} className="list-item" component="div">
+        <Paper key={props.indexVal} className={listItemClassName} component="div">
             <ListItem component="div">
                 <ListItemIcon>
                     <Checkbox 
@@ -40,7 +42,7 @@ function TodoListItem(props) {
                 <ListItemText 
                     id={"itemText"+props.indexVal} 
                     className="todo-item-title" 
-                    contentEditable="true" 
+                    contentEditable={props.completed ? "false" : "true"}
                     primary={props.title} 
                     onMouseUp={setEdit} 
                     onBlur={setEdit} 

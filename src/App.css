@@ -85,13 +85,17 @@ code {
   margin: auto;
 }
 
-.todo-item-title {
+.list-item.is-completed .todo-item-title {
+  text-decoration: line-through;
+}
+
+.list-item .todo-item-title {
   color: var(--on-surface-color);
   transition: all 200ms ease-in;
   border-radius: 2px;
 }
 
-.todo-item-title:hover {
+.list-item:not(.is-completed) .todo-item-title:hover {
   background-color: rgba(0,0,0, 0.08);
   cursor: text;
 }
