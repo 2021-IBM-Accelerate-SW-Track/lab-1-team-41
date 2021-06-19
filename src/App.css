@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0f62fe;
+  --secondary-color: #da1e28;
+  --surface-color: #f2f4f8;
+}
+
 .App {
   text-align: center;
 }
