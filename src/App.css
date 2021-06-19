@@ -85,6 +85,10 @@ code {
   margin: auto;
 }
 
+.todo-item-title {
+  color: var(--on-surface-color);
+}
+
 .todo-item-checked-icon {
   fill: var(--primary-color) !important;
 }
@@ -93,6 +97,7 @@ code {
   justify-self: flex-end;
   text-align: right;
   padding-right: 1.75rem;
+  color: var(--on-surface-color);
 }
 
 .todo-item-delete-btn{

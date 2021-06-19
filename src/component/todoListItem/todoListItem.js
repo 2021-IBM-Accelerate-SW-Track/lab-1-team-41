@@ -37,7 +37,7 @@ function TodoListItem(props) {
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id={"itemText"+props.indexVal} contentEditable="true" primary={props.title} onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText id={"itemText"+props.indexVal} className="todo-item-title" contentEditable="true" primary={props.title} onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
                 <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
                 <ListItemSecondaryAction>
                     <IconButton onClick={() => props.delete(props.title)} className="todo-item-delete-btn">
