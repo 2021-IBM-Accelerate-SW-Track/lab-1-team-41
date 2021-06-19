@@ -2,6 +2,9 @@
   --primary-color: #0f62fe;
   --secondary-color: #da1e28;
   --surface-color: #f2f4f8;
+  --on-surface-color: #525252;
+  --on-surface-dimmed-color: #878d96;
+  --warning-color: #f1c21b;
 }
 
 .App {
@@ -44,9 +47,12 @@ code {
 
 .empty-state-placeholder-icon {
   margin-right: 0.75rem;
+  color: var(--warning-color);
 }
 
-.empty-state-placeholder-message {}
+.empty-state-placeholder-message {
+  color: var(--on-surface-color);
+}
 
 #todo-empty-state-placeholder {
   max-width: 42%;
