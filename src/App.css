@@ -87,6 +87,20 @@ code {
 
 .todo-item-title {
   color: var(--on-surface-color);
+  transition: all 200ms ease-in;
+  border-radius: 2px;
+}
+
+.todo-item-title:hover {
+  background-color: rgba(0,0,0, 0.08);
+  cursor: text;
+}
+
+.todo-item-title:focus {
+  padding: 0.25rem 0.4rem 0.25rem 0.4rem;
+  background-color: rgba(0,0,0, 0.08);
+  border-radius: 4px;
+  outline: none;
 }
 
 .todo-item-checked-icon {
