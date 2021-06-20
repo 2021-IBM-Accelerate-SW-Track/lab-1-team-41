@@ -14,6 +14,12 @@ export default function TodoListInputGroup (props){
         }
     }
 
+    function handleTitleKeyDown(e){
+        if (e.key === "Enter"){
+            addItemClicked();
+        }
+    }
+
     return (
         <div id="todo-input-group-container">
             <TextField 
@@ -23,6 +29,7 @@ export default function TodoListInputGroup (props){
                 data-testid="new-item-input"
                 value={inputTitle} 
                 onChange={(e) => setTitle(e.target.value)}
+                onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputProps={{id: "todo-input-group-title-field"}}/>
             <Button 
                 id="todo-input-group-add-button" 

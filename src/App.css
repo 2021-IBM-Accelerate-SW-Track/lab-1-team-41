@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #0f62fe;
+  --secondary-color: #da1e28;
+  --surface-color: #f2f4f8;
+  --on-surface-color: #525252;
+  --on-surface-dimmed-color: #878d96;
+  --warning-color: #f1c21b;
+}
+
 .App {
   text-align: center;
 }
@@ -16,6 +25,14 @@ code {
     monospace;
 }
 
+/* Navigation Bar */
+#navbar {
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: var(--primary-color);
+}
+/* Navigation Bar */
+
 /* Empty State Placeholder */
 .empty-state-placeholder {
   display: flex;
@@ -30,13 +47,17 @@ code {
 
 .empty-state-placeholder-icon {
   margin-right: 0.75rem;
+  color: var(--warning-color);
 }
 
-.empty-state-placeholder-message {}
+.empty-state-placeholder-message {
+  color: var(--on-surface-color);
+}
 
 #todo-empty-state-placeholder {
   max-width: 42%;
   margin-bottom: 1rem;
+  background-color: var(--surface-color);
 }
 /* Empty State Placeholder */
 
@@ -58,16 +79,47 @@ code {
 /* List Item */
 .list-item { 
   margin-bottom: 15px !important;
-  background-color: rgb(184, 184, 184) !important;
+  background-color: var(--surface-color) !important;
   border-radius: 3px !important;
   max-width: 60% !important;
   margin: auto;
+}
+
+.list-item.is-completed .todo-item-title {
+  text-decoration: line-through;
+}
+
+.list-item .todo-item-title {
+  color: var(--on-surface-color);
+  transition: all 200ms ease-in;
+  border-radius: 2px;
+}
+
+.list-item:not(.is-completed) .todo-item-title:hover {
+  background-color: rgba(0,0,0, 0.08);
+  cursor: text;
+}
+
+.todo-item-title:focus {
+  padding: 0.25rem 0.4rem 0.25rem 0.4rem;
+  background-color: rgba(0,0,0, 0.08);
+  border-radius: 4px;
+  outline: none;
+}
+
+.todo-item-checked-icon {
+  fill: var(--primary-color) !important;
 }
 
 .todo-item-date-added {
   justify-self: flex-end;
   text-align: right;
   padding-right: 1.75rem;
+  color: var(--on-surface-color);
+}
+
+.todo-item-delete-btn{
+  color: var(--secondary-color) !important;
 }
 /* List Item */
 
@@ -80,6 +132,18 @@ code {
 
 .todo-input-group-textfield-container {
   width: 100%;
+}
+
+.todo-input-group-textfield-container .MuiFilledInput-root {
+  background-color: var(--surface-color);
+}
+
+.todo-input-group-textfield-container label.Mui-focused {
+  color: var(--primary-color);
+}
+
+.todo-input-group-textfield-container .MuiFilledInput-underline.Mui-focused:after {
+  border-color: var(--primary-color);
 }
 
 #todo-input-group-title-field {
@@ -95,5 +159,7 @@ code {
 
   width: 100%;
   padding: 0.75rem;
+
+  background-color: var(--primary-color);
 }
 /* Todo Input Group */
