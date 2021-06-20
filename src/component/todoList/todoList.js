@@ -20,7 +20,7 @@ function TodoList() {
         />
     );
     
-    function updateText(oldText, newText) {
+    function updateText(oldText, newText) { //look into updateDate function
         let templist = [...todoList];
         for(let i = 0; i<templist.length; i++) {
             if(templist[i].title === oldText) {
@@ -39,17 +39,17 @@ function TodoList() {
         return false;
     }
 
-    function addItem(inputTitle) {
+    function addItem(inputTitle, dateDue) {
         var dateObj = new Date();
         const newItem = {
             title: inputTitle,
             dateAdded: (dateObj.getMonth() + 1) + "/" + dateObj.getDate() + "/" + dateObj.getFullYear(),
             timeAdded: dateObj.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', timeZoneName: 'short'}),
-            dateDue: "",
+            dateDue: dateDue,
             completed: false,
         }
         
-        //could add error message later on, also add check for date and time when those are added
+        //could add error message later on
         if (!newItem.title || isDuplicate(newItem)) return false; 
 
         //date and time variables can be changed from strings by whoever is doing that issue
