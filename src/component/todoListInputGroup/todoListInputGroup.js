@@ -35,6 +35,12 @@ export default function TodoListInputGroup (props){
         
     }
 
+    function handleTitleKeyDown(e){
+        if (e.key === "Enter"){
+            addItemClicked();
+        }
+    }
+
     function handleInputChangeDateDue(a){
         const {dateDue, value2} = a.target
         setDateDue(value2)
@@ -51,6 +57,7 @@ export default function TodoListInputGroup (props){
                         data-testid="new-item-input"
                         value={inputTitle} 
                         onChange={handleInputChangeTitle}
+                        onKeyDown={(e) => handleTitleKeyDown(e)}
                         InputProps={{id: "todo-input-group-title-field"}}/>
                         <TextField
                         className="todo-input-group-textfield-container"
@@ -60,6 +67,7 @@ export default function TodoListInputGroup (props){
                             defaultValue="2021-01-01"
                             value2 = {dateDue}
                             onChange={handleInputChangeDateDue}
+                            onKeyDown={(e) => handleTitleKeyDown(e)}
                             InputLabelProps={{
                             shrink: true,
                             }}

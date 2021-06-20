@@ -3,7 +3,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-
+import { CheckCircleRounded } from '@material-ui/icons';
+import RadioButtonUnchecked from '@material-ui/icons/RadioButtonUnchecked';
 
 
 function TodoListItem(props) {
@@ -25,20 +26,31 @@ function TodoListItem(props) {
         }
     }
 
+    let listItemClassName = props.completed === true ? 'list-item is-completed' : 'list-item';
+
     return (
-        <Paper key={props.indexVal} className="list-item" component="div">
+        <Paper key={props.indexVal} className={listItemClassName} component="div">
             <ListItem component="div">
                 <ListItemIcon>
                     <Checkbox 
                         color="primary"
+                        checkedIcon={<CheckCircleRounded className="todo-item-checked-icon"/>}
+                        icon={<RadioButtonUnchecked/>}
                         checked={props.completed}
                     />
                 </ListItemIcon>
-                <ListItemText id={"itemText"+props.indexVal} contentEditable="true" primary={props.title} onMouseUp={setEdit} onBlur={setEdit} onKeyDown={handleKeyDown}/>
+                <ListItemText 
+                    id={"itemText"+props.indexVal} 
+                    className="todo-item-title" 
+                    contentEditable={props.completed ? "false" : "true"}
+                    primary={props.title} 
+                    onMouseUp={setEdit} 
+                    onBlur={setEdit} 
+                    onKeyDown={handleKeyDown}/>
                 <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
                 <ListItemText secondary={"Due Date: " + props.dateDue}/>
                 <ListItemSecondaryAction>
-                    <IconButton color="secondary">
+                    <IconButton onClick={() => props.delete(props.title)} className="todo-item-delete-btn">
                         <DeleteIcon/>
                     </IconButton>
                 </ListItemSecondaryAction>
