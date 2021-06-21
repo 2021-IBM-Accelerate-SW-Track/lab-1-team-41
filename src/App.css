@@ -83,6 +83,8 @@ code {
   border-radius: 3px !important;
   max-width: 60% !important;
   margin: auto;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .list-item.is-completed .todo-item-title {
@@ -98,6 +100,25 @@ code {
 .list-item:not(.is-completed) .todo-item-title:hover {
   background-color: rgba(0,0,0, 0.08);
   cursor: text;
+}
+
+.todo-item-title-date-container[data-date-present='true'] .todo-item-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.todo-item-title-date-container .todo-item-date-chip {
+  border-radius: 4px;
+  background-color: #d0e2ff;
+}
+
+.todo-item-title-date-container .todo-item-date-chip .MuiChip-label {
+  font-weight: 600;
+}
+
+.todo-item-title-date-container .MuiChip-icon {
+  margin-left: 8px;
+  fill: black;
 }
 
 .todo-item-title:focus {
@@ -151,6 +172,21 @@ code {
   width: 100%;
 }
 
+#todo-input-group-date-container {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 3.25rem;
+  background-color: var(--surface-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#todo-input-group-date-container:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
 #todo-input-group-add-button {
   display: block;
   margin-left: auto;
@@ -163,3 +199,45 @@ code {
   background-color: var(--primary-color);
 }
 /* Todo Input Group */
+
+/* Todo Input Date Modal */
+#date-picker-modal .MuiPickersToolbar-toolbar {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiTab-root {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .PrivateTabIndicator-colorSecondary-3 {
+  background-color: var(--warning-color);
+}
+
+#date-picker-modal .MuiPickersDay-daySelected {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockNumber-clockNumberSelected {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockPointer-pointer {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClock-pin {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockPointer-thumb {
+  border-color: var(--primary-color);
+}
+
+#todo-input-group-dialog-actions-container {
+  justify-content: space-between;
+}
+
+#todo-input-group-dialog-actions-container #todo-input-group-dialog-ok-button {
+  background-color: var(--primary-color);
+}
+/* Todo Input Date Modal */
