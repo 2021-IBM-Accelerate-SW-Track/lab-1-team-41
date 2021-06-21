@@ -37,6 +37,8 @@ function TodoListItem(props) {
                         checkedIcon={<CheckCircleRounded className="todo-item-checked-icon"/>}
                         icon={<RadioButtonUnchecked/>}
                         checked={props.completed}
+                        onChange={() => props.markComplete(props.indexVal, props.completed === true ? false : true)}
+                        
                     />
                 </ListItemIcon>
                 <ListItemText 
