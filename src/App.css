@@ -180,7 +180,43 @@ code {
 /* Todo Input Group */
 
 /* Todo Input Date Modal */
+#date-picker-modal .MuiPickersToolbar-toolbar {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiTab-root {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .PrivateTabIndicator-colorSecondary-3 {
+  background-color: var(--warning-color);
+}
+
+#date-picker-modal .MuiPickersDay-daySelected {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockNumber-clockNumberSelected {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockPointer-pointer {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClock-pin {
+  background-color: var(--primary-color);
+}
+
+#date-picker-modal .MuiPickersClockPointer-thumb {
+  border-color: var(--primary-color);
+}
+
 #todo-input-group-dialog-actions-container {
   justify-content: space-between;
+}
+
+#todo-input-group-dialog-actions-container #todo-input-group-dialog-ok-button {
+  background-color: var(--primary-color);
 }
 /* Todo Input Date Modal */

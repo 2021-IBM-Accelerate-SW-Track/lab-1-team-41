@@ -54,7 +54,7 @@ export default function TodoListInputGroup (props){
                 <Typography>{dateDue === null ? "No Due Date" : "Due: " + dateDue.toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric'}) + " @ " + dateDue.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', timeZoneName: 'short'})}</Typography>
             </Paper>
 
-            <Dialog open={dateModalOpen} onEntered={() => setDateDue(new Date())} disableBackdropClick disableEscapeKeyDown>
+            <Dialog id="date-picker-modal" open={dateModalOpen} onEntered={() => setDateDue(new Date())} disableBackdropClick disableEscapeKeyDown>
                 <DateTimePicker
                     disablePast
                     variant="static"
