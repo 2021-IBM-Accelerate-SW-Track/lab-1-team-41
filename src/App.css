@@ -109,7 +109,7 @@ code {
 
 .todo-item-title-date-container .todo-item-date-chip {
   border-radius: 4px;
-  background-color: var(--warning-color);
+  background-color: #d0e2ff;
 }
 
 .todo-item-title-date-container .todo-item-date-chip .MuiChip-label {
