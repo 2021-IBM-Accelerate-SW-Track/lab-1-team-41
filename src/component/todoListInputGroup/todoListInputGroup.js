@@ -13,7 +13,7 @@ export default function TodoListInputGroup (props){
         if (addResult === true){
             // item addition was a success - clear input
             setTitle("");
-            setDateDue("");
+            setDateDue(null);
         } else {
             // item not added - could add error message here
         }
