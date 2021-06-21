@@ -19,6 +19,7 @@ function TodoList() {
             completed={todoitem.completed}
             update={updateText}
             delete={deleteItem}
+            markComplete={markComplete}
         />
     );
     
@@ -62,6 +63,13 @@ function TodoList() {
     function deleteItem(deleteInput) {
         let templist = [...todoList];
         templist = templist.filter(item => item.title !== deleteInput);
+        setTodoList(templist);
+    }
+
+    function markComplete(indexVal) {
+        let templist = [...todoList];
+        let selectedItem = templist[indexVal];
+        selectedItem.completed=true;
         setTodoList(templist);
     }
 
