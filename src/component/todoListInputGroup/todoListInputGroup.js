@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField, Paper, Typography } from '@material-ui/core';
 
 // const useStyle = makeStyles(theme => ({
 //     root: {
@@ -12,7 +12,7 @@ import { Button, TextField } from '@material-ui/core';
 
 export default function TodoListInputGroup (props){
     let [inputTitle, setTitle] = useState("");
-    let [dateDue, setDateDue] = useState("");
+    let [dateDue, setDateDue] = useState(null);
     // const classes = useStyle();
 
     function addItemClicked() {
@@ -44,7 +44,7 @@ export default function TodoListInputGroup (props){
                 onChange={(e) => setTitle(e.target.value)}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputProps={{id: "todo-input-group-title-field"}}/>
-            <TextField
+            {/* <TextField
                 className="todo-input-group-textfield-container"
                 id="date"
                 label="Due Date"
@@ -53,7 +53,10 @@ export default function TodoListInputGroup (props){
                 value = {dateDue}
                 onChange={(e) => setDateDue(e.target.value)}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
-                InputLabelProps={{ shrink: true }}/>
+                InputLabelProps={{ shrink: true }}/> */}
+            <Paper id="todo-input-group-date-container" component="div">
+                <Typography>{dateDue === null ? "No Due Date" : dateDue}</Typography>
+            </Paper>
             <Button 
                 id="todo-input-group-add-button" 
                 variant="contained" 

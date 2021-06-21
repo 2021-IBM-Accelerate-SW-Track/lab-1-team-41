@@ -151,6 +151,21 @@ code {
   width: 100%;
 }
 
+#todo-input-group-date-container {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 3.25rem;
+  background-color: var(--surface-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#todo-input-group-date-container:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
 #todo-input-group-add-button {
   display: block;
   margin-left: auto;
