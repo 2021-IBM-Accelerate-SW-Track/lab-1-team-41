@@ -50,7 +50,9 @@ function TodoListItem(props) {
                     onBlur={setEdit} 
                     onKeyDown={handleKeyDown}/>
                 <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
-                <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
+                { props.dateDue != null &&
+                    <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
+                }
                 <ListItemSecondaryAction>
                     <IconButton onClick={() => props.delete(props.title)} className="todo-item-delete-btn">
                         <DeleteIcon/>
