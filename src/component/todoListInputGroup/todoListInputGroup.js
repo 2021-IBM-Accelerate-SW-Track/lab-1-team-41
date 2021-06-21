@@ -56,7 +56,7 @@ export default function TodoListInputGroup (props){
                 InputProps={{id: "todo-input-group-title-field"}}/>
 
             <Paper id="todo-input-group-date-container" component="div" onClick={() => setDateModalOpen(true)}>
-                <Typography>{dateDue === null ? "No Due Date" : "Due: " + dateDue.toLocaleString()}</Typography>
+                <Typography>{dateDue === null ? "No Due Date" : "Due: " + dateDue.toLocaleDateString("en-US", {year: 'numeric', month: 'long', day: 'numeric'}) + " @ " + dateDue.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', timeZoneName: 'short'})}</Typography>
             </Paper>
 
             <Dialog open={dateModalOpen} onEntered={() => setDateDue(new Date())} disableBackdropClick disableEscapeKeyDown>
