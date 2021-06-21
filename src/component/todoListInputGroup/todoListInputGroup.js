@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
-import { Button, TextField, Paper, Typography } from '@material-ui/core';
-
+import { Button, TextField, Paper, Typography, Dialog } from '@material-ui/core';
+import { DateTimePicker } from "@material-ui/pickers";
 // const useStyle = makeStyles(theme => ({
 //     root: {
 //         '& .MuiFormControl-root':{
@@ -57,6 +57,15 @@ export default function TodoListInputGroup (props){
             <Paper id="todo-input-group-date-container" component="div">
                 <Typography>{dateDue === null ? "No Due Date" : dateDue}</Typography>
             </Paper>
+            <Dialog open={true}>
+                <DateTimePicker
+                    variant="static"
+                    format="d MMM yyyy"
+                    value={{}}
+                    onChange={{}}
+                />
+            </Dialog>
+            
             <Button 
                 id="todo-input-group-add-button" 
                 variant="contained" 
