@@ -1,5 +1,5 @@
-import React, { useState, useEffect }from 'react';
-import { Button, TextField, makeStyles } from '@material-ui/core';
+import React, { useState }from 'react';
+import { Button, TextField } from '@material-ui/core';
 
 // const useStyle = makeStyles(theme => ({
 //     root: {
@@ -41,9 +41,8 @@ export default function TodoListInputGroup (props){
         }
     }
 
-    function handleInputChangeDateDue(a){
-        const {dateDue, value2} = a.target
-        setDateDue(value2)
+    function handleInputChangeDateDue(e){
+        setDateDue(e.target.value);
     }
     
     return (
@@ -62,8 +61,8 @@ export default function TodoListInputGroup (props){
                 id="date"
                 label="Due Date"
                 type="date"
-                defaultValue="2021-01-01"
-                value2 = {dateDue}
+                placeholder={dateDue === null ? "No Due Date" : "Enter Date"}
+                value = {dateDue}
                 onChange={handleInputChangeDateDue}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputLabelProps={{ shrink: true }}/>
