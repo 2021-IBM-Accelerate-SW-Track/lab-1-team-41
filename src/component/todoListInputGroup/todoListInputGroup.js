@@ -1,19 +1,10 @@
 import React, { useState }from 'react';
 import { Button, TextField, Paper, Typography, Dialog } from '@material-ui/core';
 import { DateTimePicker } from "@material-ui/pickers";
-// const useStyle = makeStyles(theme => ({
-//     root: {
-//         '& .MuiFormControl-root':{
-//             width: '100%',
-//             margin: theme.spacing(1)
-//         }
-//     }
-// }));
 
 export default function TodoListInputGroup (props){
     let [inputTitle, setTitle] = useState("");
     let [dateDue, setDateDue] = useState(null);
-    // const classes = useStyle();
 
     function addItemClicked() {
         let addResult = props.addHandler(inputTitle, dateDue);
