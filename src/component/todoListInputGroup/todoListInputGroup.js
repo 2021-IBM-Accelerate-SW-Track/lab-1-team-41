@@ -1,19 +1,19 @@
 import React, { useState, useEffect }from 'react';
 import { Button, TextField, makeStyles } from '@material-ui/core';
 
-const useStyle = makeStyles(theme => ({
-    root: {
-        '& .MuiFormControl-root':{
-            width: '100%',
-            margin: theme.spacing(1)
-        }
-    }
-}));
+// const useStyle = makeStyles(theme => ({
+//     root: {
+//         '& .MuiFormControl-root':{
+//             width: '100%',
+//             margin: theme.spacing(1)
+//         }
+//     }
+// }));
 
 export default function TodoListInputGroup (props){
     let [inputTitle, setTitle] = useState("");
     let [dateDue, setDateDue] = useState("");
-    const classes = useStyle();
+    // const classes = useStyle();
 
     function addItemClicked() {
         let addResult = props.addHandler(inputTitle);
@@ -48,39 +48,33 @@ export default function TodoListInputGroup (props){
     
     return (
         <div id="todo-input-group-container">
-            <form className = {classes.root}>
-                
-                    <TextField 
-                        className="todo-input-group-textfield-container" 
-                        label="Todo Title" 
-                        variant="filled" 
-                        data-testid="new-item-input"
-                        value={inputTitle} 
-                        onChange={handleInputChangeTitle}
-                        onKeyDown={(e) => handleTitleKeyDown(e)}
-                        InputProps={{id: "todo-input-group-title-field"}}/>
-                        <TextField
-                        className="todo-input-group-textfield-container"
-                            id="date"
-                            label="Due Date"
-                            type="date"
-                            defaultValue="2021-01-01"
-                            value2 = {dateDue}
-                            onChange={handleInputChangeDateDue}
-                            onKeyDown={(e) => handleTitleKeyDown(e)}
-                            InputLabelProps={{
-                            shrink: true,
-                            }}
-                        />
-            </form>
-                <Button 
-                    id="todo-input-group-add-button" 
-                    variant="contained" 
-                    color="primary" 
-                    onClick={addItemClicked} 
-                    data-testid="new-item-button">
-                    Add Todo
-                </Button>
+            <TextField 
+                className="todo-input-group-textfield-container" 
+                label="Todo Title" 
+                variant="filled" 
+                data-testid="new-item-input"
+                value={inputTitle} 
+                onChange={handleInputChangeTitle}
+                onKeyDown={(e) => handleTitleKeyDown(e)}
+                InputProps={{id: "todo-input-group-title-field"}}/>
+            <TextField
+                className="todo-input-group-textfield-container"
+                id="date"
+                label="Due Date"
+                type="date"
+                defaultValue="2021-01-01"
+                value2 = {dateDue}
+                onChange={handleInputChangeDateDue}
+                onKeyDown={(e) => handleTitleKeyDown(e)}
+                InputLabelProps={{ shrink: true }}/>
+            <Button 
+                id="todo-input-group-add-button" 
+                variant="contained" 
+                color="primary" 
+                onClick={addItemClicked} 
+                data-testid="new-item-button">
+                Add Todo
+            </Button>
         </div>
        
         
