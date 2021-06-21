@@ -16,33 +16,21 @@ export default function TodoListInputGroup (props){
     // const classes = useStyle();
 
     function addItemClicked() {
-        let addResult = props.addHandler(inputTitle);
-        let addDate = props.addHandler(dateDue);
+        let addResult = props.addHandler(inputTitle, dateDue);
+        // let addDate = props.addHandler(dateDue);
         if (addResult === true){
             // item addition was a success - clear input
-            if(addDate === true){
-                setDateDue("");
-            }
             setTitle("");
-           
+            setDateDue("");
         } else {
             // item not added - could add error message here
         }
-    }
-    function handleInputChangeTitle(e){
-        const {inputTitle, value} = e.target
-        setTitle(value)
-        
     }
 
     function handleTitleKeyDown(e){
         if (e.key === "Enter"){
             addItemClicked();
         }
-    }
-
-    function handleInputChangeDateDue(e){
-        setDateDue(e.target.value);
     }
     
     return (
@@ -53,7 +41,7 @@ export default function TodoListInputGroup (props){
                 variant="filled" 
                 data-testid="new-item-input"
                 value={inputTitle} 
-                onChange={handleInputChangeTitle}
+                onChange={(e) => setTitle(e.target.value)}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputProps={{id: "todo-input-group-title-field"}}/>
             <TextField
@@ -63,7 +51,7 @@ export default function TodoListInputGroup (props){
                 type="date"
                 placeholder={dateDue === null ? "No Due Date" : "Enter Date"}
                 value = {dateDue}
-                onChange={handleInputChangeDateDue}
+                onChange={(e) => setDateDue(e.target.value)}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputLabelProps={{ shrink: true }}/>
             <Button 
