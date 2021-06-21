@@ -1,10 +1,11 @@
 import React, { useState }from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper} from '@material-ui/core';
+import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper, Chip} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { CheckCircleRounded } from '@material-ui/icons';
 import RadioButtonUnchecked from '@material-ui/icons/RadioButtonUnchecked';
+import EventIcon from '@material-ui/icons/Event';
 
 
 function TodoListItem(props) {
@@ -51,7 +52,13 @@ function TodoListItem(props) {
                         onBlur={setEdit} 
                         onKeyDown={handleKeyDown}/>
                         { props.dateDue != null &&
-                            <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
+                            <Chip
+                                className="todo-item-date-chip"
+                                title="Due Date"
+                                icon={<EventIcon className="todo-item-date-chip-icon"fontSize="small"/>}
+                                label={props.dateDue.toLocaleString()}
+                            />
+                            // <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
                         }
                 </div>
                 
