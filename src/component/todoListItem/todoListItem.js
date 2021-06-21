@@ -56,7 +56,7 @@ function TodoListItem(props) {
                                 className="todo-item-date-chip"
                                 title="Due Date"
                                 icon={<EventIcon className="todo-item-date-chip-icon"fontSize="small"/>}
-                                label={props.dateDue.toLocaleString()}
+                                label={props.dateDue.toLocaleDateString("en-US", { month: 'long', day: 'numeric'}) + " @ " + props.dateDue.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit'})}
                             />
                             // <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
                         }

@@ -112,6 +112,10 @@ code {
   background-color: var(--warning-color);
 }
 
+.todo-item-title-date-container .todo-item-date-chip .MuiChip-label {
+  font-weight: 600;
+}
+
 .todo-item-title-date-container .MuiChip-icon {
   margin-left: 8px;
   fill: black;
