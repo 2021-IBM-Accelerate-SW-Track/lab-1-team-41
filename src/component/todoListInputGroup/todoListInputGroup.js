@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { Button, TextField, Paper, Typography, Dialog } from '@material-ui/core';
+import { Button, TextField, Paper, Typography, Dialog, DialogContent, DialogActions} from '@material-ui/core';
 import { DateTimePicker } from "@material-ui/pickers";
 
 export default function TodoListInputGroup (props){
@@ -25,6 +25,17 @@ export default function TodoListInputGroup (props){
         }
     }
 
+    function handleDialogClose(action){
+        switch (action) {
+            case "cancel":
+                setDateDue(null);
+                setDateModalOpen(false);
+                break;
+            default:
+                break;
+        }
+    }
+
     function handleDateChange(e){
         console.log(e);
         setDateDue(e);
@@ -46,7 +57,7 @@ export default function TodoListInputGroup (props){
                 <Typography>{dateDue === null ? "No Due Date" : "Due: " + dateDue.toLocaleString()}</Typography>
             </Paper>
 
-            <Dialog open={dateModalOpen} onClose={() => setDateModalOpen(false)}>
+            <Dialog open={dateModalOpen} disableBackdropClick disableEscapeKeyDown>
                 <DateTimePicker
                     disablePast
                     variant="static"
@@ -54,6 +65,17 @@ export default function TodoListInputGroup (props){
                     value={dateDue}
                     onChange={(e) => setDateDue(e)}
                 />
+                <DialogActions id="todo-input-group-dialog-actions-container" disableSpacing>
+                    <Button 
+                        id="todo-input-group-dialog-cancel-button"
+                        onClick={() => handleDialogClose("cancel")}
+                    >
+                        Cancel
+                    </Button>
+                    <Button>
+                        OK
+                    </Button>
+                </DialogActions>
             </Dialog>
             
             <Button 

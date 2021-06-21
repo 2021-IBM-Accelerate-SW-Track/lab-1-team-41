@@ -178,3 +178,9 @@ code {
   background-color: var(--primary-color);
 }
 /* Todo Input Group */
+
+/* Todo Input Date Modal */
+#todo-input-group-dialog-actions-container {
+  justify-content: space-between;
+}
+/* Todo Input Date Modal */
