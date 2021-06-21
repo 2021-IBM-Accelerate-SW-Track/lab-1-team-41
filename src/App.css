@@ -100,6 +100,10 @@ code {
   cursor: text;
 }
 
+.todo-item-title-date-container[data-date-present='true'] .todo-item-title {
+  margin-bottom: -5px;
+}
+
 .todo-item-title:focus {
   padding: 0.25rem 0.4rem 0.25rem 0.4rem;
   background-color: rgba(0,0,0, 0.08);

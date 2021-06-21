@@ -41,18 +41,21 @@ function TodoListItem(props) {
                         
                     />
                 </ListItemIcon>
-                <ListItemText 
-                    id={"itemText"+props.indexVal} 
-                    className="todo-item-title" 
-                    contentEditable={props.completed ? "false" : "true"}
-                    primary={props.title} 
-                    onMouseUp={setEdit} 
-                    onBlur={setEdit} 
-                    onKeyDown={handleKeyDown}/>
+                <div className="todo-item-title-date-container" data-date-present={props.dateDue !== null}>
+                    <ListItemText 
+                        id={"itemText"+props.indexVal} 
+                        className="todo-item-title" 
+                        contentEditable={props.completed ? "false" : "true"}
+                        primary={props.title} 
+                        onMouseUp={setEdit} 
+                        onBlur={setEdit} 
+                        onKeyDown={handleKeyDown}/>
+                        { props.dateDue != null &&
+                            <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
+                        }
+                </div>
+                
                 <ListItemText className="todo-item-date-added" secondary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
-                { props.dateDue != null &&
-                    <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
-                }
                 <ListItemSecondaryAction>
                     <IconButton onClick={() => props.delete(props.title)} className="todo-item-delete-btn">
                         <DeleteIcon/>
