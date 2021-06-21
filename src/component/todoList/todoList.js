@@ -66,10 +66,10 @@ function TodoList() {
         setTodoList(templist);
     }
 
-    function markComplete(indexVal) {
+    function markComplete(indexVal, newVal) {
         let templist = [...todoList];
         let selectedItem = templist[indexVal];
-        selectedItem.completed=true;
+        selectedItem.completed=newVal;
         setTodoList(templist);
     }
 
