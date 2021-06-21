@@ -49,7 +49,7 @@ function TodoListItem(props) {
                     onMouseUp={setEdit} 
                     onBlur={setEdit} 
                     onKeyDown={handleKeyDown}/>
-                <ListItemText className="todo-item-date-added" primary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
+                <ListItemText className="todo-item-date-added" secondary={"Added on: " + props.dateAdded + " @ " + props.timeAdded}/>
                 { props.dateDue != null &&
                     <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
                 }
