@@ -37,11 +37,6 @@ export default function TodoListInputGroup (props){
                 break;
         }
     }
-
-    function handleDateChange(e){
-        console.log(e);
-        setDateDue(e);
-    }
     
     return (
         <div id="todo-input-group-container">
