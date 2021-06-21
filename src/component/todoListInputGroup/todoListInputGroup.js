@@ -31,6 +31,8 @@ export default function TodoListInputGroup (props){
                 setDateDue(null);
                 setDateModalOpen(false);
                 break;
+            case "ok":
+                setDateModalOpen(false);
             default:
                 break;
         }
@@ -57,7 +59,7 @@ export default function TodoListInputGroup (props){
                 <Typography>{dateDue === null ? "No Due Date" : "Due: " + dateDue.toLocaleString()}</Typography>
             </Paper>
 
-            <Dialog open={dateModalOpen} disableBackdropClick disableEscapeKeyDown>
+            <Dialog open={dateModalOpen} onEntered={() => setDateDue(new Date())} disableBackdropClick disableEscapeKeyDown>
                 <DateTimePicker
                     disablePast
                     variant="static"
@@ -72,7 +74,12 @@ export default function TodoListInputGroup (props){
                     >
                         Cancel
                     </Button>
-                    <Button>
+                    <Button
+                        id="todo-input-group-dialog-ok-button"
+                        onClick={() => handleDialogClose("ok")}
+                        variant="contained"
+                        color="primary"
+                        >
                         OK
                     </Button>
                 </DialogActions>
