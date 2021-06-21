@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Checkbox, ListItemIcon, ListItemSecondaryAction, IconButton, Paper, Chip} from '@material-ui/core';
@@ -58,7 +58,6 @@ function TodoListItem(props) {
                                 icon={<EventIcon className="todo-item-date-chip-icon"fontSize="small"/>}
                                 label={props.dateDue.toLocaleDateString("en-US", { month: 'long', day: 'numeric'}) + " @ " + props.dateDue.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit'})}
                             />
-                            // <ListItemText secondary={"Due Date: " + props.dateDue.toLocaleString()}/>
                         }
                 </div>
                 

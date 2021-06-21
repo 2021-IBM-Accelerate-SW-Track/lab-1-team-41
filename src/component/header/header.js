@@ -1,5 +1,4 @@
-import { AppBar, Toolbar, Typography, Button} from '@material-ui/core';
-import EditIcon from '@material-ui/icons/Edit';
+import { AppBar, Toolbar, Typography} from '@material-ui/core';
 
 export default function Header(){
     return (

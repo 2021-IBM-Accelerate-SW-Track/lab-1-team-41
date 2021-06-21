@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { Button, TextField, Paper, Typography, Dialog, DialogContent, DialogActions} from '@material-ui/core';
+import { Button, TextField, Paper, Typography, Dialog, DialogActions} from '@material-ui/core';
 import { DateTimePicker } from "@material-ui/pickers";
 
 export default function TodoListInputGroup (props){
@@ -33,6 +33,7 @@ export default function TodoListInputGroup (props){
                 break;
             case "ok":
                 setDateModalOpen(false);
+                break;
             default:
                 break;
         }
