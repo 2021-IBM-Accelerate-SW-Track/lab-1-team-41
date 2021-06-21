@@ -4,7 +4,7 @@ import { DateTimePicker } from "@material-ui/pickers";
 
 export default function TodoListInputGroup (props){
     let [inputTitle, setTitle] = useState("");
-    let [dateDue, setDateDue] = useState(null);
+    let [dateDue, setDateDue] = useState(new Date());
 
     function addItemClicked() {
         let addResult = props.addHandler(inputTitle, dateDue);
@@ -23,6 +23,11 @@ export default function TodoListInputGroup (props){
             addItemClicked();
         }
     }
+
+    function handleDateChange(e){
+        console.log(e);
+        setDateDue(e);
+    }
     
     return (
         <div id="todo-input-group-container">
@@ -35,15 +40,19 @@ export default function TodoListInputGroup (props){
                 onChange={(e) => setTitle(e.target.value)}
                 onKeyDown={(e) => handleTitleKeyDown(e)}
                 InputProps={{id: "todo-input-group-title-field"}}/>
+
             <Paper id="todo-input-group-date-container" component="div">
-                <Typography>{dateDue === null ? "No Due Date" : dateDue}</Typography>
+                <Typography>{dateDue === null ? "No Due Date" : dateDue.toString()}</Typography>
             </Paper>
+
             <Dialog open={true}>
                 <DateTimePicker
+                    autoOk
+                    disablePast
                     variant="static"
                     format="d MMM yyyy"
-                    value={{}}
-                    onChange={{}}
+                    value={dateDue}
+                    onChange={(e) => setDateDue(e)}
                 />
             </Dialog>
             
